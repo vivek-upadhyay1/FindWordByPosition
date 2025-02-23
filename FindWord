@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class FindWord{
+
+public static void main(String[] args) throws Exception{
+System.out.println("Input your sentence ");
+Scanner sc = new Scanner(System.in);
+String inputSentence = sc.nextLine();
+System.out.println("Input the position of word you want in result ");
+int inputPosition = sc.nextInt();
+String word = usingSplit(inputSentence,inputPosition);
+System.out.println("Your word is "+ word);
+}
+
+public static String usingSplit(String inputString, int position)throws Exception {
+	String[] inputArray = inputString.split(" ");
+	if(position>=inputArray.length){
+		throw new Exception("Provided input is out of range for given sentence");
+	}
+	return inputArray[position-1];
+}
+}
